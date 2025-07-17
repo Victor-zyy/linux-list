@@ -21,7 +21,7 @@ static void list_qsort_no_recursive(struct list_head *head)
         if (L != R && &begin[i]->list != head) {
             pivot = *begin[i];
             if (i == MAX_LEN - 1) {
-                assert(-1);
+                assert(-1);  // maybe need more stack
                 return;
             }
 
@@ -50,7 +50,7 @@ static void list_qsort_no_recursive(struct list_head *head)
             end[i + 1] = end[i];
             end[i++] = L;
         } else {
-            i--;
+            i--;  // pop stack
         }
     }
 }
